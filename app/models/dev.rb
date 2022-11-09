@@ -7,7 +7,7 @@ class Dev < ActiveRecord::Base
     end
 
     def give_away(dev, freebie)
-         self.freebies[freebie].update(dev_id: dev.id)
+         self.freebies[freebie] ? self.freebie[freebie].update(dev_id: dev.id) : "Can't give what I don't have"
     end
 
 
